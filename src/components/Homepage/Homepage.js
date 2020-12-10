@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import Request from 'axios-react';
+import React from 'react';
 import CustomCard from '../utils/CustomCard/CustomCard';
 import { makeStyles } from '@material-ui/core/styles';
 
