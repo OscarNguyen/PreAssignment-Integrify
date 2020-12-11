@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
 
 const CustomCard = ({ name, username, website, id }) => {
   const classes = useStyles();
-  console.log(id, name);
+  //console.log(id, name);
   return (
     <div>
       <Card className={classes.card}>
@@ -41,7 +41,7 @@ const CustomCard = ({ name, username, website, id }) => {
           <a href={`http://${website}`}>{`http://${website}`}</a>
         </CardContent>
         <CardActions className={classes.root}>
-          <Link to={`/user/${id}`}>
+          <Link to={`/users/${id}`}>
             <Button variant="contained" color="primary">
               More Details
             </Button>

@@ -1,6 +1,7 @@
 import React from 'react';
 import CustomCard from '../utils/CustomCard/CustomCard';
 import { makeStyles } from '@material-ui/core/styles';
+import { useSelector } from 'react-redux';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -14,7 +15,8 @@ const useStyles = makeStyles((theme) => ({
 
 const Homepage = ({ data }) => {
   const classes = useStyles();
-
+  /*   const userData = useSelector((state) => state.userData);
+  console.log(userData); */
   return (
     <div className={classes.root}>
       {data &&
