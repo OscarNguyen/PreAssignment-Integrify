@@ -1,21 +1,20 @@
-import './App.css';
-import AppRouter from './routers/AppRouter';
-import { createStore, combineReducers, applyMiddleware } from 'redux';
-import { Provider } from 'react-redux';
-import thunk from 'redux-thunk';
-import dataReducer from './store/reducers/data';
-import { fetchData } from './store/actions/data';
-/* const rootReducer = combineReducers({
-  userData: dataReducer,
-});
+import React from 'react';
+import Homepage from './components/Homepage/Homepage';
+import User from './components/User/User';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-const store = createStore(rootReducer, applyMiddleware(thunk));
-store.dispatch(fetchData()); */
 function App() {
   return (
-    /*     <Provider store={store}> */
-    <AppRouter />
-    /*   </Provider> */
+    <Router>
+      <Switch>
+        <Route path="/" exact>
+          <Homepage />
+        </Route>
+        <Route path="/users/:id">
+          <User />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 

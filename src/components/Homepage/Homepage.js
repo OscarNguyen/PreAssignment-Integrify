@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import CustomCard from '../utils/CustomCard/CustomCard';
 import { makeStyles } from '@material-ui/core/styles';
-import { useSelector } from 'react-redux';
+import axios from 'axios';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -9,14 +9,23 @@ const useStyles = makeStyles((theme) => ({
     flexWrap: 'wrap',
     flexDirection: 'row',
     alignItems: 'center',
-    padding: '8rem',
+    padding: '6% 8%',
   },
 }));
 
-const Homepage = ({ data }) => {
+const Homepage = () => {
+  const [data, setData] = useState([]);
+
   const classes = useStyles();
-  /*   const userData = useSelector((state) => state.userData);
-  console.log(userData); */
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await axios('https://jsonplaceholder.typicode.com/users/');
+      setData(result.data);
+    };
+
+    fetchData();
+  }, []);
   return (
     <div className={classes.root}>
       {data &&
