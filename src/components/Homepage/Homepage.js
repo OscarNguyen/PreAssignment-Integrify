@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
     flexWrap: 'wrap',
     flexDirection: 'row',
     alignItems: 'center',
-    padding: '6% 20%',
+    padding: '6% 12%',
   },
 }));
 
