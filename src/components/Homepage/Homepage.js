@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import CustomCard from '../utils/CustomCard/CustomCard';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import axios from 'axios';
-import { Card, CardContent, CardActions, Button, useMediaQuery } from '@material-ui/core';
+import { useMediaQuery } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   root: {

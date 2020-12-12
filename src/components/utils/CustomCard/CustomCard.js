@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
   },
   card: {
     width: '15.68rem',
-    padding: '3%' /* '2.5rem' */,
+    padding: '3%',
     margin: '1rem',
     height: 'auto',
   },
@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
 
 const CustomCard = ({ name, username, website, id }) => {
   const classes = useStyles();
-  //console.log(id, name);
+
   return (
     <div>
       <Card className={classes.card}>

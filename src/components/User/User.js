@@ -4,6 +4,7 @@ import { Card, CardContent, CardActions, Button, useMediaQuery } from '@material
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
+import Bounce from 'react-activity/lib/Bounce';
 
 import './User.css';
 
@@ -34,8 +35,6 @@ const useStyles = makeStyles((theme) => ({
   smMdContent: {
     margin: '0 3%',
   },
-
-  mdContent: {},
 
   actions: {
     display: 'flex',
@@ -68,9 +67,10 @@ const User = () => {
 
     fetchData();
   }, [id]);
-  console.log(history);
+
   const classes = useStyles();
-  return (
+
+  return userData ? (
     <Card
       className={(smMatch ? classes.smCard : classes.card) || (mdMatch ? classes.mdCard : classes.card)}
       variant="outlined"
@@ -107,6 +107,8 @@ const User = () => {
         </Button>
       </CardActions>
     </Card>
+  ) : (
+    <Bounce />
   );
 };
 
